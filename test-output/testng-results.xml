@@ -1,153 +1,167 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="3" passed="2" failed="1" skipped="0">
+<testng-results ignored="0" total="10" passed="10" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-07-11T15:25:23 IST" name="Default suite" finished-at="2024-07-11T15:25:57 IST" duration-ms="33914">
+  <suite started-at="2024-07-12T14:25:06 IST" name="Default suite" finished-at="2024-07-12T14:27:37 IST" duration-ms="151360">
     <groups>
     </groups>
-    <test started-at="2024-07-11T15:25:23 IST" name="Default test" finished-at="2024-07-11T15:25:57 IST" duration-ms="33914">
+    <test started-at="2024-07-12T14:25:06 IST" name="Default test" finished-at="2024-07-12T14:27:37 IST" duration-ms="151360">
       <class name="testpkg.RedwolfTest">
-        <test-method is-config="true" signature="beftest()[pri:0, instance:testpkg.RedwolfTest@303cf2ba]" started-at="2024-07-11T15:25:23 IST" name="beftest" finished-at="2024-07-11T15:25:24 IST" duration-ms="1567" status="PASS">
+        <test-method is-config="true" signature="beftest()[pri:0, instance:testpkg.RedwolfTest@7188af83]" started-at="2024-07-12T14:25:06 IST" name="beftest" finished-at="2024-07-12T14:25:10 IST" duration-ms="4717" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beftest -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:testpkg.RedwolfTest@303cf2ba]" started-at="2024-07-11T15:25:24 IST" name="setup" finished-at="2024-07-11T15:25:27 IST" duration-ms="2406" status="PASS">
+        <test-method signature="registerTest()[pri:1, instance:testpkg.RedwolfTest@7188af83]" started-at="2024-07-12T14:25:10 IST" name="registerTest" finished-at="2024-07-12T14:25:30 IST" duration-ms="19744" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method signature="loginTest()[pri:0, instance:testpkg.RedwolfTest@303cf2ba]" started-at="2024-07-11T15:25:27 IST" name="loginTest" finished-at="2024-07-11T15:25:45 IST" duration-ms="18502" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- loginTest -->
-        <test-method is-config="true" signature="browserclose(org.testng.ITestResult)[pri:0, instance:testpkg.RedwolfTest@303cf2ba]" started-at="2024-07-11T15:25:45 IST" name="browserclose" finished-at="2024-07-11T15:25:45 IST" duration-ms="5" status="PASS">
+        </test-method> <!-- registerTest -->
+        <test-method is-config="true" signature="browserclose(org.testng.ITestResult)[pri:0, instance:testpkg.RedwolfTest@7188af83]" started-at="2024-07-12T14:25:30 IST" name="browserclose" finished-at="2024-07-12T14:25:30 IST" duration-ms="19" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=loginTest status=SUCCESS method=RedwolfTest.loginTest()[pri:0, instance:testpkg.RedwolfTest@303cf2ba] output={null}]]]>
+                <![CDATA[[TestResult name=registerTest status=SUCCESS method=RedwolfTest.registerTest()[pri:1, instance:testpkg.RedwolfTest@7188af83] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- browserclose -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:testpkg.RedwolfTest@303cf2ba]" started-at="2024-07-11T15:25:45 IST" name="setup" finished-at="2024-07-11T15:25:46 IST" duration-ms="807" status="PASS">
+        <test-method signature="loginTestUsingDataDriven()[pri:2, instance:testpkg.RedwolfTest@7188af83]" started-at="2024-07-12T14:25:30 IST" name="loginTestUsingDataDriven" finished-at="2024-07-12T14:26:49 IST" duration-ms="78772" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method signature="addtocartTest()[pri:0, instance:testpkg.RedwolfTest@303cf2ba]" started-at="2024-07-11T15:25:46 IST" name="addtocartTest" finished-at="2024-07-11T15:25:55 IST" depends-on-methods="testpkg.RedwolfTest.loginTest" duration-ms="9110" status="PASS">
+        </test-method> <!-- loginTestUsingDataDriven -->
+        <test-method is-config="true" signature="browserclose(org.testng.ITestResult)[pri:0, instance:testpkg.RedwolfTest@7188af83]" started-at="2024-07-12T14:26:49 IST" name="browserclose" finished-at="2024-07-12T14:26:49 IST" duration-ms="2" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=loginTestUsingDataDriven status=SUCCESS method=RedwolfTest.loginTestUsingDataDriven()[pri:2, instance:testpkg.RedwolfTest@7188af83] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- browserclose -->
+        <test-method signature="logo()[pri:3, instance:testpkg.RedwolfTest@7188af83]" started-at="2024-07-12T14:26:49 IST" name="logo" finished-at="2024-07-12T14:26:53 IST" duration-ms="3997" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- logo -->
+        <test-method is-config="true" signature="browserclose(org.testng.ITestResult)[pri:0, instance:testpkg.RedwolfTest@7188af83]" started-at="2024-07-12T14:26:53 IST" name="browserclose" finished-at="2024-07-12T14:26:53 IST" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=logo status=SUCCESS method=RedwolfTest.logo()[pri:3, instance:testpkg.RedwolfTest@7188af83] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- browserclose -->
+        <test-method signature="searchTest()[pri:4, instance:testpkg.RedwolfTest@7188af83]" started-at="2024-07-12T14:26:53 IST" name="searchTest" finished-at="2024-07-12T14:26:59 IST" duration-ms="6376" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- searchTest -->
+        <test-method signature="homepageDropdownTest()[pri:5, instance:testpkg.RedwolfTest@7188af83]" started-at="2024-07-12T14:26:59 IST" name="homepageDropdownTest" finished-at="2024-07-12T14:27:04 IST" duration-ms="4232" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- homepageDropdownTest -->
+        <test-method is-config="true" signature="browserclose(org.testng.ITestResult)[pri:0, instance:testpkg.RedwolfTest@7188af83]" started-at="2024-07-12T14:26:59 IST" name="browserclose" finished-at="2024-07-12T14:26:59 IST" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=searchTest status=SUCCESS method=RedwolfTest.searchTest()[pri:4, instance:testpkg.RedwolfTest@7188af83] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- browserclose -->
+        <test-method is-config="true" signature="browserclose(org.testng.ITestResult)[pri:0, instance:testpkg.RedwolfTest@7188af83]" started-at="2024-07-12T14:27:04 IST" name="browserclose" finished-at="2024-07-12T14:27:04 IST" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=homepageDropdownTest status=SUCCESS method=RedwolfTest.homepageDropdownTest()[pri:5, instance:testpkg.RedwolfTest@7188af83] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- browserclose -->
+        <test-method signature="addtocartTest()[pri:6, instance:testpkg.RedwolfTest@7188af83]" started-at="2024-07-12T14:27:04 IST" name="addtocartTest" finished-at="2024-07-12T14:27:09 IST" depends-on-methods="testpkg.RedwolfTest.loginTestUsingDataDriven" duration-ms="5948" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- addtocartTest -->
-        <test-method is-config="true" signature="browserclose(org.testng.ITestResult)[pri:0, instance:testpkg.RedwolfTest@303cf2ba]" started-at="2024-07-11T15:25:55 IST" name="browserclose" finished-at="2024-07-11T15:25:55 IST" duration-ms="1" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=addtocartTest status=SUCCESS method=RedwolfTest.addtocartTest()[pri:0, instance:testpkg.RedwolfTest@303cf2ba] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- browserclose -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:testpkg.RedwolfTest@303cf2ba]" started-at="2024-07-11T15:25:55 IST" name="setup" finished-at="2024-07-11T15:25:56 IST" duration-ms="779" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method signature="checkout()[pri:0, instance:testpkg.RedwolfTest@303cf2ba]" started-at="2024-07-11T15:25:56 IST" name="checkout" finished-at="2024-07-11T15:25:56 IST" depends-on-methods="testpkg.RedwolfTest.addtocartTest" duration-ms="29" status="FAIL">
-          <exception class="org.openqa.selenium.NoSuchElementException">
-            <message>
-              <![CDATA[no such element: Unable to locate element: {"method":"xpath","selector":"//div[@class='pull-right']//span[text()='Checkout']"}
-  (Session info: chrome=126.0.6478.127)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
-Build info: version: '4.21.0', revision: '79ed462ef4'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.3'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [5f751a3ec60bcd6b21263273f0f89ebe, findElement {value=//div[@class='pull-right']//span[text()='Checkout'], using=xpath}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 126.0.6478.127, chrome: {chromedriverVersion: 126.0.6478.126 (d36ace6122e..., userDataDir: C:\Users\hp\AppData\Local\T...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:53062}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:53062/devtoo..., se:cdpVersion: 126.0.6478.127, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 5f751a3ec60bcd6b21263273f0f89ebe]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//div[@class='pull-right']//span[text()='Checkout']"}
-  (Session info: chrome=126.0.6478.127)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
-Build info: version: '4.21.0', revision: '79ed462ef4'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.3'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [5f751a3ec60bcd6b21263273f0f89ebe, findElement {value=//div[@class='pull-right']//span[text()='Checkout'], using=xpath}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 126.0.6478.127, chrome: {chromedriverVersion: 126.0.6478.126 (d36ace6122e..., userDataDir: C:\Users\hp\AppData\Local\T...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:53062}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:53062/devtoo..., se:cdpVersion: 126.0.6478.127, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 5f751a3ec60bcd6b21263273f0f89ebe
-at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
-at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
-at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
-at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
-at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:518)
-at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
-at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:355)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:349)
-at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
-at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-at jdk.proxy2/jdk.proxy2.$Proxy16.getWrappedElement(Unknown Source)
-at org.openqa.selenium.remote.WebElementToJsonConverter.apply(WebElementToJsonConverter.java:48)
-at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
-at java.base/java.util.Spliterators$ArraySpliterator.forEachRemaining(Spliterators.java:1024)
-at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
-at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
-at java.base/java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:921)
-at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
-at java.base/java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:682)
-at org.openqa.selenium.remote.RemoteWebDriver.executeScript(RemoteWebDriver.java:461)
-at pagepkg.RedwolfPage.checkout(RedwolfPage.java:409)
-at testpkg.RedwolfTest.checkout(RedwolfTest.java:125)
-at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
-at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:686)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
-at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
-at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:992)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
-at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
-at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-at org.testng.TestRunner.privateRun(TestRunner.java:739)
-at org.testng.TestRunner.run(TestRunner.java:614)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
-at org.testng.SuiteRunner.run(SuiteRunner.java:312)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
-at org.testng.TestNG.runSuites(TestNG.java:1112)
-at org.testng.TestNG.run(TestNG.java:1079)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
+        <test-method signature="checkout()[pri:7, instance:testpkg.RedwolfTest@7188af83]" started-at="2024-07-12T14:27:09 IST" name="checkout" finished-at="2024-07-12T14:27:20 IST" depends-on-methods="testpkg.RedwolfTest.addtocartTest" duration-ms="10938" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- checkout -->
-        <test-method is-config="true" signature="browserclose(org.testng.ITestResult)[pri:0, instance:testpkg.RedwolfTest@303cf2ba]" started-at="2024-07-11T15:25:56 IST" name="browserclose" finished-at="2024-07-11T15:25:57 IST" duration-ms="513" status="PASS">
+        <test-method is-config="true" signature="browserclose(org.testng.ITestResult)[pri:0, instance:testpkg.RedwolfTest@7188af83]" started-at="2024-07-12T14:27:09 IST" name="browserclose" finished-at="2024-07-12T14:27:09 IST" duration-ms="0" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=checkout status=FAILURE method=RedwolfTest.checkout()[pri:0, instance:testpkg.RedwolfTest@303cf2ba] output={null}]]]>
+                <![CDATA[[TestResult name=addtocartTest status=SUCCESS method=RedwolfTest.addtocartTest()[pri:6, instance:testpkg.RedwolfTest@7188af83] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- browserclose -->
-        <test-method is-config="true" signature="teardown()[pri:0, instance:testpkg.RedwolfTest@303cf2ba]" started-at="2024-07-11T15:25:57 IST" name="teardown" finished-at="2024-07-11T15:25:57 IST" duration-ms="143" status="PASS">
+        <test-method signature="wishlistTest()[pri:8, instance:testpkg.RedwolfTest@7188af83]" started-at="2024-07-12T14:27:20 IST" name="wishlistTest" finished-at="2024-07-12T14:27:28 IST" depends-on-methods="testpkg.RedwolfTest.loginTestUsingDataDriven" duration-ms="7877" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- wishlistTest -->
+        <test-method is-config="true" signature="browserclose(org.testng.ITestResult)[pri:0, instance:testpkg.RedwolfTest@7188af83]" started-at="2024-07-12T14:27:20 IST" name="browserclose" finished-at="2024-07-12T14:27:20 IST" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=checkout status=SUCCESS method=RedwolfTest.checkout()[pri:7, instance:testpkg.RedwolfTest@7188af83] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- browserclose -->
+        <test-method signature="removeProductFromWishlistTest()[pri:9, instance:testpkg.RedwolfTest@7188af83]" started-at="2024-07-12T14:27:28 IST" name="removeProductFromWishlistTest" finished-at="2024-07-12T14:27:33 IST" depends-on-methods="testpkg.RedwolfTest.wishlistTest" duration-ms="5022" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- removeProductFromWishlistTest -->
+        <test-method is-config="true" signature="browserclose(org.testng.ITestResult)[pri:0, instance:testpkg.RedwolfTest@7188af83]" started-at="2024-07-12T14:27:28 IST" name="browserclose" finished-at="2024-07-12T14:27:28 IST" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=wishlistTest status=SUCCESS method=RedwolfTest.wishlistTest()[pri:8, instance:testpkg.RedwolfTest@7188af83] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- browserclose -->
+        <test-method is-config="true" signature="browserclose(org.testng.ITestResult)[pri:0, instance:testpkg.RedwolfTest@7188af83]" started-at="2024-07-12T14:27:33 IST" name="browserclose" finished-at="2024-07-12T14:27:33 IST" duration-ms="2" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=removeProductFromWishlistTest status=SUCCESS method=RedwolfTest.removeProductFromWishlistTest()[pri:9, instance:testpkg.RedwolfTest@7188af83] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- browserclose -->
+        <test-method signature="logoutTest()[pri:10, instance:testpkg.RedwolfTest@7188af83]" started-at="2024-07-12T14:27:33 IST" name="logoutTest" finished-at="2024-07-12T14:27:37 IST" depends-on-methods="testpkg.RedwolfTest.loginTestUsingDataDriven" duration-ms="3627" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- logoutTest -->
+        <test-method is-config="true" signature="browserclose(org.testng.ITestResult)[pri:0, instance:testpkg.RedwolfTest@7188af83]" started-at="2024-07-12T14:27:37 IST" name="browserclose" finished-at="2024-07-12T14:27:37 IST" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=logoutTest status=SUCCESS method=RedwolfTest.logoutTest()[pri:10, instance:testpkg.RedwolfTest@7188af83] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- browserclose -->
+        <test-method is-config="true" signature="teardown()[pri:0, instance:testpkg.RedwolfTest@7188af83]" started-at="2024-07-12T14:27:37 IST" name="teardown" finished-at="2024-07-12T14:27:38 IST" duration-ms="991" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- teardown -->

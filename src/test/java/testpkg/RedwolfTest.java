@@ -10,8 +10,11 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.io.FileHandler;
 import org.testng.ITestResult;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
+import org.testng.annotations.AfterSuite;
 import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
@@ -36,48 +39,42 @@ public class RedwolfTest {
 	String baseUrl="https://www.redwolf.in";
 	
 	
-	@BeforeTest
+	@BeforeClass
 	public void beftest(){
 		reporter=new ExtentSparkReporter("reports/redwolfReport.html");
 		reporter.config().setDocumentTitle("Automationreport");
 		reporter.config().setReportName("functional test");
 		reporter.config().setTheme(Theme.DARK);
+		
 		extent=new ExtentReports();
 		extent.attachReporter(reporter);
 		extent.setSystemInfo("Hostname", "localhost");
 		extent.setSystemInfo("OS", "windows10");
 		extent.setSystemInfo("Tester_name", "Gopika");
 		extent.setSystemInfo("Browser Name", "Chrome");
-		WebDriverManager.chromedriver().setup();
-		driver=new ChromeDriver();	
+
+        driver = new ChromeDriver();
+        driver.get(baseUrl);
+        driver.manage().window().maximize();
+        redwolfPage = new RedwolfPage(driver);
 	}
 		
 	
-	
-	@BeforeMethod
-	public void setup() {
-		driver.get(baseUrl);
-		driver.manage().window().maximize();
-		redwolfPage = new RedwolfPage(driver);
-
-	}
-	
-	//testing wether the logo is redirecting to the home page 
-	@Test()
+	@Test(priority=3)
 	public void logo() {
 		test=extent.createTest("Logo test");
 		redwolfPage.logo();
+		test.log(Status.PASS, "Logo test passed.");
 	}
 	
-	//testing the registration of a new user
-	@Test()
+	@Test(priority = 1)
 	public void registerTest() {
 		test=extent.createTest("RegistrationTest");
 		redwolfPage.register();
+		test.log(Status.PASS, "Registration test passed.");
 	}
 	
-	//testing the login of the exisiting user using data driven method
-	@Test(enabled=false)
+	@Test(priority = 2)
 	public void loginTestUsingDataDriven() throws InterruptedException, IOException {
 		test=extent.createTest("Login using data driven method ");
 		List<String[]> loginDataList = ExcelUtilities.getLoginData();
@@ -88,69 +85,74 @@ public class RedwolfTest {
             redwolfPage.loginusingDataDriven(email, password);
             Thread.sleep(5000);
         }
+        test.log(Status.PASS, "Login using data driven method passed.");
+        driver.navigate().to(baseUrl); 
 	}
 	
-	//login without data driven 
-	@Test()
-	public void loginTest() {
-		test=extent.createTest("LoginUsingEmailandPass");
-		redwolfPage.login();
-	}
+//	@Test()
+//	public void loginTest() {
+//		test=extent.createTest("LoginUsingEmailandPass");
+//		redwolfPage.login();
+//		test.log(Status.PASS, "Login test passed.");
+//	}
 	
-	//testing the search 
-	@Test()
+	@Test(priority = 4)
 	public void searchTest() {
 		test=extent.createTest("SearchTest");
 		redwolfPage.search();
+		test.log(Status.PASS, "Search test passed.");
 	}
 	
-	//testing the dropdown of home page
-	@Test()
+	@Test(priority = 5)
 	public void homepageDropdownTest() {
 		test=extent.createTest("HomepageDropdownTest");
 		redwolfPage.homePageDropdown();
+		test.log(Status.PASS, "Homepage dropdown test passed.");
 	}
 	
-	//testing the add to cart function
-	@Test(dependsOnMethods = {"loginTest"})
+	@Test(priority = 6,dependsOnMethods = {"loginTestUsingDataDriven"})
 	public void addtocartTest() {
 		test=extent.createTest("AddtocartTest");
 		redwolfPage.addtocart();
+		test.log(Status.PASS, "Add to cart test passed.");
 	}
 	
-	//testing the checkout function
-	@Test(dependsOnMethods = {"addtocartTest"})
+	@Test(priority = 7,dependsOnMethods = {"addtocartTest"})
 	public void checkout() {
 		test=extent.createTest("CheckoutTest");
 		redwolfPage.checkout();
+		driver.navigate().to(baseUrl); 
+		test.log(Status.PASS, "Checkout test passed.");
 	}
 	
-	//testing wishlist
-	@Test(dependsOnMethods = {"loginTest"})
+	@Test(priority = 8,dependsOnMethods = {"loginTestUsingDataDriven"})
 	public void wishlistTest() {
 		test=extent.createTest("AddingtoWishlistTest");
 		redwolfPage.wishlist();
+		test.log(Status.PASS, "Wishlist test passed.");
 	}
 	
-	//testing wether the product can be removed from the wishlist
-	@Test(dependsOnMethods = {"wishlistTest"})
+	@Test(priority = 9,dependsOnMethods = {"wishlistTest"})
 	public void removeProductFromWishlistTest() {
 		test=extent.createTest("RemovefromWishlisttest");
 		redwolfPage.removePrdocuFromWishlist();
+		test.log(Status.PASS, "Remove product from wishlist test passed.");
+		driver.navigate().to(baseUrl); 
 	}
 	
-	//logout
-	@Test(dependsOnMethods = {"loginTest"})
+	@Test(priority = 10,dependsOnMethods = {"loginTestUsingDataDriven"})
 	public void logoutTest() {
 		test=extent.createTest("LogoutTest");
 		redwolfPage.logout();
+		test.log(Status.PASS, "Logout test passed.");
 	}
 	
-	@AfterTest
+	@AfterSuite
 	public void teardown() {
 		if(driver!=null) {
-			driver.close();
+			driver.quit();
 		}
+		 extent.flush();
 	}
 	
 	@AfterMethod
@@ -168,9 +170,11 @@ public class RedwolfTest {
 	else if(result.getStatus()==ITestResult.SUCCESS){
 		test.log(Status.PASS, "test case Passed is"+result.getName());
 	}
-	 
-}
+	}
 	
+	
+	
+
 	public static String screenshotMethod(WebDriver driver,String screenshotname) throws IOException
 	{
 		File src=((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);

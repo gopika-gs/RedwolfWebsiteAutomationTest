@@ -5,12 +5,10 @@
     <classes>
       <class name="testpkg.RedwolfTest">
         <methods>
+          <include name="registerTest"/>
+          <include name="loginTestUsingDataDriven"/>
           <include name="teardown"/>
-          <include name="checkout"/>
           <include name="beftest"/>
-          <include name="loginTest"/>
-          <include name="setup"/>
-          <include name="addtocartTest"/>
           <include name="browserclose"/>
         </methods>
       </class> <!-- testpkg.RedwolfTest -->

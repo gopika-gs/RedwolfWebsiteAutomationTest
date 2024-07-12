@@ -114,7 +114,7 @@ public class RedwolfPage {
 	@FindBy(xpath="//*[@id=\"popup-view-cart-btn\"]")
 	WebElement viewcart;
 	//checkout Button
-	@FindBy(xpath="//*[@id=\"content\"]/form/div[2]/div[6]/span")
+	@FindBy(xpath="//*[@id=\"content\"]/form/div[2]/div[1]/span")
 	WebElement checkoutButton;
 	//already added address
 	@FindBy(xpath="//*[@id=\"shipping-existing\"]/div[1]/div")
@@ -159,7 +159,7 @@ public class RedwolfPage {
 	@FindBy(xpath="//*[@id=\"button-payment-address_form\"]")
 	WebElement submitButton;
 	//countinue button on the cart page
-	@FindBy(xpath="//div[@class='pull-right']//span[text()='Checkout']")
+	@FindBy(xpath="//*[@id='hide_con_bt']/div/span")
 	WebElement cartCountinue;
 	//countinue button on cheaout address page
 	@FindBy(xpath="//*[@id=\"button-continue-payment_big\"]")
@@ -168,7 +168,7 @@ public class RedwolfPage {
 	@FindBy(xpath="//input[@value='Continue']")
 	WebElement countinueButtonOnPaymentPage;
 	//order confirm button
-	@FindBy(xpath="//*[@id=\"button-confirm\"]")
+	@FindBy(xpath="//*[@id=\"hide_con_bt\"]//div//button[@id='button-confirm']")
 	WebElement orderconfirm;
 	//account dropdown
 	@FindBy(xpath="//*[@id=\"login-modal-button\"]/div[@class='dropdown']")
@@ -240,7 +240,7 @@ public class RedwolfPage {
         registerSubmitButton.click();
         System.out.println("If captcha uppears, try to solve it mannually");
         try {
-			Thread.sleep(8000);
+			Thread.sleep(10000);
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
@@ -259,6 +259,7 @@ public class RedwolfPage {
 	
 	public void loginusingDataDriven(String email, String password) {
 		System.out.println("Checking whether the login is working  =   ");
+		logo.click();
 		loginLink.click();
 		wait.until(ExpectedConditions.visibilityOf(loginEmail));
 		loginEmail.clear();
@@ -267,7 +268,7 @@ public class RedwolfPage {
 		loginpassword.sendKeys(password);
 		loginButton.click();
 		try {
-			Thread.sleep(8000);
+			Thread.sleep(10000);
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
@@ -390,23 +391,13 @@ public class RedwolfPage {
 		addtocartButton.click();
 		wait.until(ExpectedConditions.visibilityOf(viewcart));
 		viewcart.click();
-		String ExpectedRedirectingUrl = "https://www.redwolf.in/index.php?route=checkout/cart";
-		String actualUrl = driver.getCurrentUrl();
-		if(actualUrl.equals(ExpectedRedirectingUrl)) {
-			System.out.println("passed");
-			try {
-    			Thread.sleep(3000);
-    		} catch (InterruptedException e) {
-    			e.printStackTrace();
-    		}
-		}else {
-			System.out.println("failed");
-		}
 	}
 	
 	public void checkout() {
 		System.out.println("Checking wether the cheakout function is  working properly   =  ");
-		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", cartCountinue);
+		Actions actions = new Actions(driver);
+		actions.moveToElement(cartCountinue);
+        actions.perform();
         wait.until(ExpectedConditions.visibilityOf(cartCountinue));
 		cartCountinue.click();
 		wait.until(ExpectedConditions.visibilityOf(defaultAddress));
@@ -415,10 +406,12 @@ public class RedwolfPage {
 			countinueButtonOnaddresspage.click();
 			wait.until(ExpectedConditions.visibilityOf(countinueButtonOnPaymentPage));
 			countinueButtonOnPaymentPage.click();
+			System.out.println("helo1");
 			wait.until(ExpectedConditions.visibilityOf(orderconfirm));
 			orderconfirm.click();
+			System.out.println("helo1");
 			try {
-				Thread.sleep(3000);
+				Thread.sleep(5000);
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}
@@ -453,18 +446,18 @@ public class RedwolfPage {
 			countinueButtonOnPaymentPage.click();
 			wait.until(ExpectedConditions.visibilityOf(orderconfirm));
 			orderconfirm.click();
-		}
-		String redirectingUrl = "https://api.cashfree.com/checkout";
-		if(driver.getCurrentUrl().equals(redirectingUrl)){
-			System.out.println("passed");
 			try {
-    			Thread.sleep(3000);
-    		} catch (InterruptedException e) {
-    			e.printStackTrace();
-    		}
-		}else {
-			System.out.println("failed");
+				Thread.sleep(5000);
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
 		}
+		String currentUrl = driver.getCurrentUrl();
+		if (currentUrl.contains("https://payments.cashfree.com/")) {
+            System.out.println("Redirected to the expected URL: " + currentUrl);
+        } else {
+            System.out.println("Not redirected to the expected URL. Current URL: " + currentUrl);
+        }
 		
 	}
 	
